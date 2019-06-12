@@ -152,3 +152,41 @@ document.querySelectorAll(".modal__input").forEach(function (input) {
     startModalValidation();
   });
 });
+
+// Check players points and who won the tournament 
+var winTournament = function winTournament() {
+  var messageWithResult = params.playerPoints + " - " + params.cpuPoints + "<br><br>";
+  var message;
+
+  if (params.cpuPoints == params.rounds) {
+    message = messageWithResult + "game over" + "<br>" + "You have LOST the game!" + "<br>" + "Please start a 'new game'";
+    params.victories = 0;
+  } else if (params.playerPoints == params.rounds) {
+    message = messageWithResult + "game over" + "<br>" + "You have WON the game!" + "<br>" + "Please start a 'new game'";
+    params.victories += 1;
+  }
+
+  if (params.cpuPoints == params.rounds || params.playerPoints == params.rounds) {
+    params.message = message;
+    modalContent("#scoreModal");
+    showModal("#scoreModal");
+    playerMoves.classList.add("invisible");
+    score("noOne", "noPoint");
+  }
+
+  wonMatches.innerHTML = params.victories;
+};
+
+// Computer move
+function computerMove() {
+  return Math.floor(Math.random()*3)+1;
+}
+
+// Player move
+var playerMove = function playerMove(moveP) {
+	var pcMove = computerMove();
+  	var moveNames=['Rock','Paper','Scissors'];
+  	var playerName = playerNameInput.value;
+  
+  	var message = playerName + " played " + moveP + " - Computer played " + pcMove;
+}
