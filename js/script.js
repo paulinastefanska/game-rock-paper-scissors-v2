@@ -106,11 +106,17 @@ var startGameSettings = function startGameSettings() {
   outputMessages.innerHTML = "New game - rounds to win: " + roundsToWin.innerHTML; // info about rounds required to win
 
   if (params.cpuPoints > 0 || params.playerPoints > 0) {
-    // reset win counter after loss
+    // reset win counter after lost
     params.victories = 0;
   }
 
   score("noOne", "noPoint"); // point reset
 
-  wonMatches.innerHTML = params.victories; // updating highscore
+  wonMatches.innerHTML = params.victories; // updating score
+};
+
+// Show start modal and hide player buttons
+var gameInit = function gameInit() {
+  showModal("#startModal");
+  playerMoves.classList.add("invisible");
 };
