@@ -120,3 +120,19 @@ var gameInit = function gameInit() {
   showModal("#startModal");
   playerMoves.classList.add("invisible");
 };
+
+// Start button inside start modal - player name and rounds number
+var startGame = function startGame() {
+  hideModal();
+  removeClassesForIconFields();
+  params.rounds = roundsNumberInput.value;
+  roundsToWin.innerHTML = params.rounds;
+  document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
+  startGameSettings();
+  gameProgress.roundNumber = 0;
+  params.progress = [];
+};
+
+startGamePopupButton.addEventListener("click", startGame);
+
+newGameButton.addEventListener("click", gameInit);
