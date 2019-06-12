@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+
+body { margin: 0; font-family: 'Open Sans', sans-serif; text-align: center; }
+
+.container { width: 100%; max-width: 1200px; margin: 30px auto; }
+
+.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+
+.overlay.show { display: block; }
+
+.invisible { visibility: hidden; }
+
+.header { text-transform: uppercase; font-size: 50px; font-weight: 800; line-height: 65px; }
+
+.headerSpan1 { color: #747d8c; font-family: "Exo 2", sans-serif; font-size: 80px; text-transform: none; }
+
+.headerSpan2 { color: #ffa502; }
+
+.headerSpan3 { color: #2ed573; }
+
+.headerSpan4 { color: #1e90ff; }
+
+.newGameBtn { height: 70px; width: 350px; cursor: pointer; border: 4px solid #ff7f50; border-radius: 25px; font-family: "Exo 2", sans-serif; font-weight: bold; font-size: 25px; color: #ff7f50; background-image: linear-gradient(90deg, #ff7f50 50%, transparent 50%); background-color: inherit; background-position: 100% 0; background-size: 300%; transition: 0.4s; }
+
+.newGameBtn:hover { background-position: 0 100%; color: #fff; }
+
+.result { height: 80px; width: 600px; margin: 0 auto; font-family: "Exo 2", sans-serif; font-size: 25px; color: #747d8c; border: 4px solid; border-radius: 25px; }
+
+.outputResult { font-size: 20px; font-weight: 700; color: #747d8c; }
+
+[class^="btn"] { display: inline-block; position: relative; margin: 0 20px; padding: 0; height: 170px; width: 170px; cursor: pointer; border: 4px solid; border-radius: 25px; font-weight: bold; font-size: 110px; background-color: inherit; background-position: 100% 0; background-size: 300%; transition: 0.4s; }
+
+[class^="btn"]:hover { background-position: 0 100%; color: #fff; }
+
+.fas { position: absolute; top: 50%; left: none; right: 50%; transform: translate(50%, -50%); }
+
+.btnRock { color: #ffa502; border-color: #ffa502; background-image: linear-gradient(135deg, #ffa502 50%, transparent 50%); }
+
+.btnPaper { color: #2ed573; border-color: #2ed573; background-image: linear-gradient(45deg, #2ed573 50%, transparent 50%); }
+
+.btnScissors { color: #1e90ff; border-color: #1e90ff; background-image: linear-gradient(135deg, #1e90ff 50%, transparent 50%); }
+
+.alert { color: #ff7f50; border: 4px solid #ff7f50; border-radius: 25px; width: 600px; background: #fff; line-height: 17px; }
+
+.alertOver { font-family: "Exo 2", sans-serif; font-size: 32px; }
+
+.alertTourn { font-weight: 800; font-size: 25px; color: #747d8c; }
+
+.alertNew { font-family: "Exo 2", sans-serif; font-size: 22px; }
+
+/*.alertHide {
+  display: none;
+}*/
+.copyright { color: #747d8c; }
+
+.copyrightLink { color: #747d8c; text-decoration: none; }
+
+@media (max-width: 767px) { .container { margin: 20px auto; }
+  .header { line-height: 40px; font-size: 26px; }
+  .headerSpan1 { font-size: 55px; }
+  .newGameBtn { width: 200px; background: none; font-size: 22px; }
+  .newGameBtn:hover { color: #ff7f50; }
+  .result { width: 290px; font-size: 22px; }
+  .outputResult { font-size: 14px; }
+  [class^="btn"] { margin: 5px 5px; height: 86px; width: 86px; font-size: 55px; background: none; }
+  .btnRock:hover { color: #ffa502; }
+  .btnPaper:hover { color: #2ed573; }
+  .btnScissors:hover { color: #1e90ff; }
+  .alert { width: 290px; line-height: 8px; }
+  .alertOver { margin-top: 10px; font-size: 22px; }
+  .alertTourn { font-size: 16px; }
+  .alertNew { font-size: 16px; }
+  .copyright { font-size: 14px; } }
+
+/*media*/
