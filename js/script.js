@@ -83,3 +83,19 @@ var modalContent = function modalContent(modalId) {
     document.querySelector(".tableResult").appendChild(resultNewDiv);
   }
 };
+
+// Add points to players
+var score = function score(pointTo, action) {
+  if (action == "addPoint" && pointTo == "cpu") {
+    params.cpuPoints += 1;
+  } else if (action == "addPoint" && pointTo == "player") {
+    params.playerPoints += 1;
+  } else if (action == "noPoint" && pointTo == "noOne") {
+    params.playerPoints = 0;
+    params.cpuPoints = 0;
+  } 
+
+  // Update points on the scoreboard
+  playerScore.innerHTML = params.playerPoints;
+  cpuScore.innerHTML = params.cpuPoints;
+};
