@@ -136,3 +136,19 @@ var startGame = function startGame() {
 startGamePopupButton.addEventListener("click", startGame);
 
 newGameButton.addEventListener("click", gameInit);
+
+// Validation of start game form inputs - enable start button
+var startModalValidation = function startModalValidation() {
+  startGamePopupButton.disabled = true;
+
+  if (playerNameInput.checkValidity() && roundsNumberInput.checkValidity()) {
+    startGamePopupButton.disabled = false;
+  }
+};
+
+// Use validation to check inputs
+document.querySelectorAll(".modal__input").forEach(function (input) {
+  input.addEventListener("keyup", function () {
+    startModalValidation();
+  });
+});
