@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:900|Open+Sans:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Rock Paper Scissors Game v2</title>
+  </head>
+  <body>
+  	<header>
+      <h1 class="header">
+        <span class="headerSpan1">game</span><br>
+        <span class="headerSpan2">rock</span> 
+        <span class="headerSpan3">paper</span> 
+        <span class="headerSpan4">scissors</span>
+      </h1>
+    </header>
+    <div class="newGame container">
+    	<button class="button newGameBtn" id="newGameBtn">new game</button>
+    </div>
+      <!-- Score board -->
+    <div class="result">
+    	<p>
+    		<span class="resultScore" id="resultScoreName">player </span>
+    		<span id="playerScore"></span> : 
+    		<span id="cpuScore"></span> computer
+    	</p>
+    </div>
+	
+	<!-- System messages -->
+	<div class="outputResult container" id="outputResult">
+		<p>Click 'new game' to start</p>
+	</div>
+  
+    <div class="moves container">
+    	<div class="buttons invisible" id="playerMoves">
+	        <button class="btnRock" data-move="rock" id="rockButton"><i class="fas fa-hand-rock"></i></button>
+	        <button class="btnPaper" data-move="paper" id="paperButton"><i class="fas fa-hand-paper"></i></button>
+	        <button class="btnScissors" data-move="scissors" id="scissorsButton"><i class="fas fa-hand-peace"></i></button>
+      	</div>
+  	</div>
+
+    <!-- Modals -->
+    <div class="overlay" id="modal-overlay">
+
+	    <!-- End game modal / table score -->
+	    <div class="modal alert" id="scoreModal">
+	        <a href="#" class="modalClose">x</a>
+	        <div class="modalHeader"></div>
+	        <div class="modalTable">
+	          	<div class="modalTable_header">
+		            <div class="modalTable_rounds">Round</div>
+			            <div class="modalTable_player">
+			              Players moves
+			            </div>
+		            <div class="modalTable_result">Score</div>
+	          	</div>
+	          	<div class="modalTable_content">
+	            	<div class="modalTable_column tableRounds"></div>
+	            	<div class="modalTable_column tablePlayerMoves"></div>
+	            	<div class="modalTable_column tableResult"></div>
+	          	</div>
+	        </div>
+	    </div>
+
+	    <!-- Start game modal -->
+	    <div class="modal alert" id="startModal">
+	        <a href="#" class="modalClose">x</a>
+	        <div class="modalWrapper">
+	          	<label class="modal_label">Player name:</label>
+	          	<input class="modal_input" id="player-name" type="text" maxlength="10" placeholder="Max 10 characters" required autofocus/>
+	          	<label class="modal_label">Rounds required to win:</label>
+	          	<input class="modal_input" id="rounds-number" type="number" min="1" max="10" step="1" placeholder="Max 10 rounds" required/>
+	          	<button class="modal_button" id="start-button" type="button" disabled>Start</button>
+	        </div>
+	    </div>
+    </div>
+    
+    <footer class="copyright container">
+      <p class="copyrightParagraph">&copy;2019 <a class="copyrightLink" href="https://github.com/paulinastefanska"><b>Paulina Stefańska</b></a></p>
+    </footer>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>
