@@ -99,3 +99,18 @@ var score = function score(pointTo, action) {
   playerScore.innerHTML = params.playerPoints;
   cpuScore.innerHTML = params.cpuPoints;
 };
+
+// Show moves/ buttons
+var startGameSettings = function startGameSettings() {
+  playerMoves.classList.remove("invisible");
+  outputMessages.innerHTML = "New game - rounds to win: " + roundsToWin.innerHTML; // info about rounds required to win
+
+  if (params.cpuPoints > 0 || params.playerPoints > 0) {
+    // reset win counter after loss
+    params.victories = 0;
+  }
+
+  score("noOne", "noPoint"); // point reset
+
+  wonMatches.innerHTML = params.victories; // updating highscore
+};
