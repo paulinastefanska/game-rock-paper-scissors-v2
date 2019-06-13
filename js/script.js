@@ -29,16 +29,16 @@ var gameProgress = {
 };
 
 // Show modal
-var showModal = function showModal(modalId) {
+function showModal(modalId) {
   document.querySelector("#modal-overlay").classList.add("show");
-  modals.forEach(function (modal) {
-    modal.classList.remove("show");
+  modals.forEach(function (e) {
+    e.classList.remove("show");
   });
   document.querySelector(modalId).classList.add("show");
 };
 
 // Hide modal
-var hideModal = function hideModal() {
+function hideModal() {
   document.querySelector("#modal-overlay").classList.remove("show");
 };
 
@@ -57,7 +57,7 @@ for (var j = 0; j < closeButtons.length; j++) {
 }
 
 // Content modal
-var modalContent = function modalContent(modalId) {
+function modalContent(modalId) {
   var modal = document.querySelector(modalId);
   var modalHeader = modal.querySelector(".modalHeader");
   var modalTableContentColumns = document.querySelectorAll(".modalTable_column");
@@ -85,7 +85,7 @@ var modalContent = function modalContent(modalId) {
 };
 
 // Add points to players
-var score = function score(pointTo, action) {
+function score(pointTo, action) {
   if (action == "addPoint" && pointTo == "cpu") {
     params.cpuPoints += 1;
   } else if (action == "addPoint" && pointTo == "player") {
@@ -101,7 +101,7 @@ var score = function score(pointTo, action) {
 };
 
 // Show moves/ buttons
-var startGameSettings = function startGameSettings() {
+function startGameSettings() {
   playerMoves.classList.remove("invisible");
   outputMessages.innerHTML = "New game - rounds to win: " + roundsToWin.innerHTML; // info about rounds required to win
 
@@ -116,15 +116,15 @@ var startGameSettings = function startGameSettings() {
 };
 
 // Show start modal and hide player buttons
-var gameInit = function gameInit() {
+function gameInit() {
   showModal("#startModal");
   playerMoves.classList.add("invisible");
 };
 
 // Start button inside start modal - player name and rounds number
-var startGame = function startGame() {
+function startGame() {
   hideModal();
-  removeClassesForIconFields();
+  removeInvisibleButtons();
   params.rounds = roundsNumberInput.value;
   roundsToWin.innerHTML = params.rounds;
   document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
@@ -138,7 +138,7 @@ startGamePopupButton.addEventListener("click", startGame);
 newGameButton.addEventListener("click", gameInit);
 
 // Validation of start game form inputs - enable start button
-var startModalValidation = function startModalValidation() {
+function startModalValidation() {
   startGamePopupButton.disabled = true;
 
   if (playerNameInput.checkValidity() && roundsNumberInput.checkValidity()) {
@@ -146,15 +146,20 @@ var startModalValidation = function startModalValidation() {
   }
 };
 
+function checkValidity()
+{
+  if (this.value.length() > 0) return true;
+  else false;
+}
+
 // Use validation to check inputs
-document.querySelectorAll(".modal__input").forEach(function (input) {
-  input.addEventListener("keyup", function () {
-    startModalValidation();
-  });
+document.querySelectorAll(".modal_input").forEach(function (input) {
+  input.addEventListener("keyup", function () {startModalValidation();});
+  input.addEventListener("change", function () {startModalValidation();});
 });
 
 // Check players points and who won the tournament 
-var winTournament = function winTournament() {
+function winTournament() {
   var messageWithResult = params.playerPoints + " - " + params.cpuPoints + "<br><br>";
   var message;
 
@@ -183,7 +188,7 @@ function computerMove() {
 }
 
 // Player move
-var playerMove = function playerMove(moveP) {
+function playerMove(moveP) {
 	var pcMove = computerMove();
   var moveNames=['Rock','Paper','Scissors'];
   var playerName = playerNameInput.value;

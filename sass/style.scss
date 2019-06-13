@@ -32,10 +32,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    &.show {
-        display: block;
-    }
+    background: rgba(0, 0, 0, 0.5);    
 }
 .invisible {
     visibility: hidden;
@@ -146,6 +143,7 @@ body {
   background-image: linear-gradient(135deg, $blue 50%, transparent 50%);
 }
 .alert {
+  display:none;
   color: $coral;
   border: 4px solid $coral; 
   border-radius: 25px;
@@ -165,6 +163,9 @@ body {
     font-family: $font;
     font-size: 22px;
   }
+}
+.show {
+   display: block;
 }
 /*.alertHide {
   display: none;
