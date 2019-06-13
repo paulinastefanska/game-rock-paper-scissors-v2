@@ -100,10 +100,12 @@ function score(pointTo, action) {
   cpuScore.innerHTML = params.cpuPoints;
 };
 
-// Show moves/ buttons
+
 function startGameSettings() {
   playerMoves.classList.remove("invisible");
-  outputMessages.innerHTML = "New game - rounds to win: " + roundsToWin.innerHTML; // info about rounds required to win
+  document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
+
+  outputMessages.innerHTML = "Make your move! - rounds to win: " + roundsNumberInput.value; // info about rounds required to win
 
   if (params.cpuPoints > 0 || params.playerPoints > 0) {
     // reset win counter after lost
@@ -124,11 +126,9 @@ function gameInit() {
 // Start button inside start modal - player name and rounds number
 function startGame() {
   hideModal();
-  removeInvisibleButtons();
-  params.rounds = roundsNumberInput.value;
-  roundsToWin.innerHTML = params.rounds;
-  document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
   startGameSettings();
+  params.rounds = roundsNumberInput.value;
+  outputMessages.innerHTML = params.rounds;
   gameProgress.roundNumber = 0;
   params.progress = [];
 };
@@ -136,6 +136,8 @@ function startGame() {
 startGamePopupButton.addEventListener("click", startGame);
 
 newGameButton.addEventListener("click", gameInit);
+
+
 
 // Validation of start game form inputs - enable start button
 function startModalValidation() {
