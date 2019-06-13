@@ -185,8 +185,30 @@ function computerMove() {
 // Player move
 var playerMove = function playerMove(moveP) {
 	var pcMove = computerMove();
-  	var moveNames=['Rock','Paper','Scissors'];
-  	var playerName = playerNameInput.value;
+  var moveNames=['Rock','Paper','Scissors'];
+  var playerName = playerNameInput.value;
   
-  	var message = playerName + " played " + moveP + " - Computer played " + pcMove;
-}
+  var message = playerName + " played " + moveP + " - Computer played " + pcMove;
+
+// Moves compare
+if ((pcMpve == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 && moveP == 3)) {
+    message += ". Sorry, You lose!" + "<br>";
+    score("cpu", "addPoint");
+  } else if (moveP == pcMove) {
+    message += ". It`s a tie!" + "<br>";
+  } else {
+    message += ". Congrats, You won!" + "<br>";
+    score("player", "addPoint");
+  }
+
+  outputMessages.innerHTML = message;
+  gameProgress.roundNumber += 1;
+  gameProgress.message = message;
+  gameProgress.result = params.playerPoints + " - " + params.cpuPoints;
+  params.progress.push({
+    roundNumber: gameProgress.roundNumber,
+    message: gameProgress.message,
+    result: gameProgress.result
+  });
+  winTournament();
+};
