@@ -212,3 +212,11 @@ if ((pcMpve == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 &
   });
   winTournament();
 };
+
+// Click move button
+document.querySelectorAll(".player-move").forEach(function (playerMoveButton) {
+  playerMoveButton.addEventListener("click", function () {
+    var playerMoveName = playerMoveButton.getAttribute("data-move");
+    playerMove(playerMoveName);
+  });
+});
