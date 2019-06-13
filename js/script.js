@@ -105,7 +105,7 @@ function startGameSettings() {
   playerMoves.classList.remove("invisible");
   document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
 
-  outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!" ; // info about rounds required to win
+  outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!"; // info about rounds required to win
 
   if (params.cpuPoints > 0 || params.playerPoints > 0) {
     // reset win counter after lost
@@ -115,7 +115,7 @@ function startGameSettings() {
   score("noOne", "noPoint"); // point reset
 
   //wonMatches.
-  innerHTML = params.victories; // updating
+ innerHTML = params.victories; // updating
 };
 
 // Show start modal and hide player buttons
