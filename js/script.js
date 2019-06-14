@@ -119,7 +119,6 @@ function startGame() {
   hideModal();
   startGameSettings();
   params.rounds = roundsNumberInput.value;
-  outputMessages.innerHTML = params.rounds;
   gameProgress.roundNumber = 0;
   params.progress = [];
 };
@@ -178,17 +177,17 @@ function computerChoice() {
 
 // Player move
 function playerMove(moveP) {
-	var pcMove = computerChoice();
+ 	var pcMove = computerChoice();
   var moveNames=['Rock','Paper','Scissors'];
   var playerName = playerNameInput.value;
   var message = playerName + " played " + moveP + " / Computer played " + moveNames[pcMove-1];
 
 // Moves compare
-  if ((pcMove == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 && moveP == 3)) {
+  if ((pcMove == 2 && moveP == 'Rock') || (pcMove == 3 && moveP == 'Paper') || (pcMove == 1 && moveP == 'Scissors')) {
     message += ". *Sorry, You lose!*" + "<br>";
     score("cpu", "addPoint");
   } 
-  else if (moveP == pcMove) {
+  else if (moveP == moveNames[pcMove-1]) {
     message += ". *It`s a tie!*" + "<br>";
   } 
   else {
