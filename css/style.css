@@ -38,19 +38,30 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; text-align: center; }
 
 .btnScissors { color: #1e90ff; border-color: #1e90ff; background-image: linear-gradient(135deg, #1e90ff 50%, transparent 50%); }
 
-.alert { display: none; color: #ff7f50; border: 4px solid #ff7f50; border-radius: 25px; width: 600px; background: #fff; line-height: 17px; margin: auto; }
+.modal { display: none; color: #747d8c; border: 4px solid #ff7f50; border-radius: 25px; width: 600px; background: #fff; line-height: 17px; margin: auto; }
 
-.alertOver { font-family: "Exo 2", sans-serif; font-size: 32px; }
+.modalWrapper { margin: 30px auto; }
 
-.alertTourn { font-weight: 800; font-size: 25px; color: #747d8c; }
+.modal_label { font-size: 18px; font-weight: 700; }
 
-.alertNew { font-family: "Exo 2", sans-serif; font-size: 22px; }
+.modal_input { height: 30px; border-radius: 10px; }
 
-.show { display: block; }
+.modal_button { cursor: pointer; height: 30px; background: none; color: #2ed573; font-size: 18px; font-weight: 600; border-color: #2ed573; border-radius: 10px; }
 
-/*.alertHide {
-  display: none;
-}*/
+.modal_button:hover { background: #2ed573; color: #fff; }
+
+.modal_button:disabled { cursor: auto; background: none; color: #2ed573; }
+
+.modal:nth-child(1) { height: 400px; overflow-y: auto; flex-wrap: wrap; }
+
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); border-radius: 10px; background-color: #fff; }
+
+::-webkit-scrollbar { width: 14px; border-radius: 10px; background-color: #fff; }
+
+::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3); background-color: #747d8c; }
+
+.show { display: flex; }
+
 .copyright { color: #747d8c; }
 
 .copyrightLink { color: #747d8c; text-decoration: none; }
@@ -66,10 +77,7 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; text-align: center; }
   .btnRock:hover { color: #ffa502; }
   .btnPaper:hover { color: #2ed573; }
   .btnScissors:hover { color: #1e90ff; }
-  .alert { width: 290px; line-height: 8px; }
-  .alertOver { margin-top: 10px; font-size: 22px; }
-  .alertTourn { font-size: 16px; }
-  .alertNew { font-size: 16px; }
+  .modal { width: 290px; line-height: 8px; }
   .copyright { font-size: 14px; } }
 
 /*media*/
