@@ -184,14 +184,14 @@ function playerMove(moveP) {
 
 // Moves compare
   if ((pcMove == 2 && moveP == 'Rock') || (pcMove == 3 && moveP == 'Paper') || (pcMove == 1 && moveP == 'Scissors')) {
-    message += ". *Sorry, You lose!*" + "<br>";
+    message += "<br>" + "*Sorry, You lose!*" + "<br>";
     score("cpu", "addPoint");
   } 
   else if (moveP == moveNames[pcMove-1]) {
-    message += ". *It`s a tie!*" + "<br>";
+    message += "<br>" + "*It`s a tie!*" + "<br>";
   } 
   else {
-    message += ". *Congrats, You won!*" + "<br>";
+    message += "<br>" + "*Congrats, You won!*" + "<br>";
     score("player", "addPoint");
   }
 

@@ -149,10 +149,11 @@ body {
   border-radius: 25px;
   width: 600px;
   background: #fff;
-  line-height: 17px;
+  line-height: 18px;
   margin: auto;
   &Wrapper{
-    margin: 30px auto;
+    margin: 20px auto;
+    width: 500px;
   }
   &Row {
     padding: 5px;
@@ -186,9 +187,14 @@ body {
       background: none;
       color: $green;
     }
-    &Close {
-      text-decoration: none;
-    }
+  }
+  &Close {
+    display: flex;
+    text-decoration: none;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: 700;
+    color: $dark-grey;
   }
 }
 .modal:nth-child(1) {
@@ -272,6 +278,10 @@ body {
   }
   .modal {
     width: 290px;
+    &Wrapper{
+      margin: 10px auto;
+      width: 260px;
+    }
   }
   .modal_button {
     width: 80px;
