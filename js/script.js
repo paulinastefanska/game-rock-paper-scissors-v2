@@ -5,7 +5,7 @@ var paper = document.getElementById("paperButton");
 var scissors = document.getElementById("scissorsButton");
 var outputMessages = document.getElementById("outputResult");
 var newGameButton = document.getElementById("newGameBtn");
-var playerMove = document.getElementById("playerMove");
+var playerMoves = document.getElementById("playerMoves");
 var playerScore = document.getElementById("playerScore");
 var cpuScore = document.getElementById("cpuScore");
 var modals = document.querySelectorAll(".modal");
@@ -14,7 +14,6 @@ var roundsNumberInput = document.querySelector("#rounds-number");
 var startGamePopupButton = document.querySelector("#start-button");
 
 var params = {
-  victories: 0,
   playerPoints: 0,
   cpuPoints: 0,
   rounds: 0,
@@ -104,18 +103,8 @@ function score(pointTo, action) {
 function startGameSettings() {
   playerMoves.classList.remove("invisible");
   document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
-
   outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!"; // info about rounds required to win
-
-  if (params.cpuPoints > 0 || params.playerPoints > 0) {
-    // reset win counter after lost
-    params.victories = 0;
-  }
-
   score("noOne", "noPoint"); // point reset
-
-  //wonMatches.
- innerHTML = params.victories; // updating
 };
 
 // Show start modal and hide player buttons
@@ -135,9 +124,7 @@ function startGame() {
 };
 
 startGamePopupButton.addEventListener("click", startGame);
-
 newGameButton.addEventListener("click", gameInit);
-
 
 
 // Validation of start game form inputs - enable start button
@@ -149,8 +136,7 @@ function startModalValidation() {
   }
 };
 
-function checkValidity()
-{
+function checkValidity() {
   if (this.value.length() > 0) return true;
   else false;
 }
@@ -168,10 +154,9 @@ function winTournament() {
 
   if (params.cpuPoints == params.rounds) {
     message = messageWithResult + "game over" + "<br>" + "You have LOST the game!" + "<br>" + "Please start a 'new game'";
-    params.victories = 0;
-  } else if (params.playerPoints == params.rounds) {
+  } 
+  else if (params.playerPoints == params.rounds) {
     message = messageWithResult + "game over" + "<br>" + "You have WON the game!" + "<br>" + "Please start a 'new game'";
-    params.victories += 1;
   }
 
   if (params.cpuPoints == params.rounds || params.playerPoints == params.rounds) {
@@ -181,30 +166,29 @@ function winTournament() {
     playerMoves.classList.add("invisible");
     score("noOne", "noPoint");
   }
-
-  //innerHTML = params.victories;
 };
 
 // Computer move
-function computerMove() {
+function computerChoice() {
   return Math.floor(Math.random()*3)+1;
 }
 
 // Player move
 function playerMove(moveP) {
-	var pcMove = computerMove();
+	var pcMove = computerChoice();
   var moveNames=['Rock','Paper','Scissors'];
   var playerName = playerNameInput.value;
-  
-  var message = playerName + " played " + moveP + " - Computer played " + pcMove;
+  var message = playerName + " played " + moveP + " - Computer played " + moveNames[pcMove-1];
 
 // Moves compare
-if ((pcMpve == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 && moveP == 3)) {
+  if ((pcMove == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 && moveP == 3)) {
     message += ". Sorry, You lose!" + "<br>";
     score("cpu", "addPoint");
-  } else if (moveP == pcMove) {
+  } 
+  else if (moveP == pcMove) {
     message += ". It`s a tie!" + "<br>";
-  } else {
+  } 
+  else {
     message += ". Congrats, You won!" + "<br>";
     score("player", "addPoint");
   }
