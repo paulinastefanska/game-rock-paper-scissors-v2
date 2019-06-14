@@ -12,6 +12,7 @@ var modals = document.querySelectorAll(".modal");
 var playerNameInput = document.querySelector("#player-name");
 var roundsNumberInput = document.querySelector("#rounds-number");
 var startGamePopupButton = document.querySelector("#start-button");
+var resultPlayerName = document.querySelector("#resultScoreName")
 
 var params = {
   playerPoints: 0,
@@ -102,7 +103,7 @@ function score(pointTo, action) {
 // Start game settings
 function startGameSettings() {
   playerMoves.classList.remove("invisible");
-  document.querySelector("#resultScoreName").innerHTML = playerNameInput.value;
+  resultPlayerName.innerHTML = playerNameInput.value;
   outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!"; // info about rounds required to win
   score("noOne", "noPoint"); // point reset
 };
@@ -165,6 +166,8 @@ function winTournament() {
     showModal("#scoreModal");
     playerMoves.classList.add("invisible");
     score("noOne", "noPoint");
+    outputMessages.innerHTML = "Click 'new game' to start";
+    resultPlayerName.innerHTML = "player";
   }
 };
 
@@ -178,18 +181,18 @@ function playerMove(moveP) {
 	var pcMove = computerChoice();
   var moveNames=['Rock','Paper','Scissors'];
   var playerName = playerNameInput.value;
-  var message = playerName + " played " + moveP + " - Computer played " + moveNames[pcMove-1];
+  var message = playerName + " played " + moveP + " / Computer played " + moveNames[pcMove-1];
 
 // Moves compare
   if ((pcMove == 2 && moveP == 1) || (pcMove == 3 && moveP == 2) || (pcMove == 1 && moveP == 3)) {
-    message += ". Sorry, You lose!" + "<br>";
+    message += ". *Sorry, You lose!*" + "<br>";
     score("cpu", "addPoint");
   } 
   else if (moveP == pcMove) {
-    message += ". It`s a tie!" + "<br>";
+    message += ". *It`s a tie!*" + "<br>";
   } 
   else {
-    message += ". Congrats, You won!" + "<br>";
+    message += ". *Congrats, You won!*" + "<br>";
     score("player", "addPoint");
   }
 
