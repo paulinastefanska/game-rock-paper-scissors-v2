@@ -322,6 +322,9 @@ body {
     &_label {
       font-size: 18px;
     }
+    &_input {
+      width: 140px;
+    }
     .modalTable {
       margin: 5px;
       &_header {
@@ -333,7 +336,7 @@ body {
     }
   }
   .modal_button {
-    //width: 80px;
+    width: 80px;
   }
   .copyright {
     font-size: 14px;
