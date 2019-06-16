@@ -104,7 +104,7 @@ function score(pointTo, action) {
 function startGameSettings() {
   playerMoves.classList.remove("invisible");
   resultPlayerName.innerHTML = playerNameInput.value;
-  outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!"; // info about rounds required to win
+  outputMessages.innerHTML = "Make your move! You have: " + roundsNumberInput.value + " rounds to win!" + "<br>" + "Try your luck!"; // info about rounds required to win
   score("noOne", "noPoint"); // point reset
 };
 
