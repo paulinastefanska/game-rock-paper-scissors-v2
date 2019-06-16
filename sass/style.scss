@@ -127,7 +127,7 @@ body {
   }
 }
 .fas {
-  @include centerAbsolutely($top: 50%, $left: none, $right: 50%, $transform:translate(50%, -50%));
+  @include centerAbsolutely($top: 50%, $left: auto, $right: 50%, $transform:translate(50%, -50%));
 }
 .btnRock {
   color: $orange;
@@ -178,6 +178,7 @@ body {
     background: none;
     color: $green;
     margin-top: 10px;
+    padding: 0;
     font-size: 25px;
     font-weight: 600;
     border-width: 3px;
