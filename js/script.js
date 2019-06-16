@@ -165,7 +165,7 @@ function winTournament() {
     showModal("#scoreModal");
     playerMoves.classList.add("invisible");
     score("noOne", "noPoint");
-    outputMessages.innerHTML = "Click 'new game' to start";
+    outputMessages.innerHTML = "Click 'new game' to start" + "<br>" + "Try your luck!";
     resultPlayerName.innerHTML = "player";
   }
 };
