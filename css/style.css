@@ -92,7 +92,7 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; text-align: center; }
   .modal { width: 290px; }
   .modalWrapper { margin: 10px auto; width: 260px; }
   .modalHeader { font-size: 16px; }
-  .modal_label { font-size: 18px; }
+  .modal_label { font-size: 20px; }
   .modal_input { width: 160px; }
   .modal .modalTable { margin: 5px; }
   .modal .modalTable_header { font-size: 14px; }
