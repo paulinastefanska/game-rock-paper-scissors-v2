@@ -233,6 +233,9 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      div:nth-child(even) {
+        color: $coral;
+      }
     }
   }
 }
@@ -333,7 +336,7 @@ body {
         font-size: 14px;
       }
       &_content {
-        font-size: 11px;
+        font-size: 12px;
       }
     }
   }
