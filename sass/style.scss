@@ -155,7 +155,7 @@ body {
   &Wrapper{
     margin: 15px auto;
     width: 570px;
-    height: auto;
+    max-height: 400px;
     overflow-y: auto;
     flex-wrap: wrap;
   }
@@ -208,55 +208,51 @@ body {
     font-weight: 700;
     color: $coral;
   }
-}
-.modal:nth-child(1) {
-  height: 400px;
+  .modalTable {
+    margin: 10px;
+    &_header {
+      font-weight: 600;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      border: 3px solid $green;
+      border-bottom: none;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+    &_content {
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      border: 3px solid $green;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    &_column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
 }
 .show {
    display: flex;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fff
 }
 ::-webkit-scrollbar {
   width: 14px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 5px;
   -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
   background-color: $dark-grey;
 }
-.modalTable {
-  margin: 10px;
-  &_header {
-    font-weight: 600;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    border: 3px solid $green;
-    border-bottom: none;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-  }
-  &_content {
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    border: 3px solid $green;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  &_column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-}
-
 .copyright {
   color: $dark-grey;
   &Link {
@@ -317,6 +313,18 @@ body {
     &Wrapper{
       margin: 10px auto;
       width: 260px;
+    }
+    &Header {
+      font-size: 16px;
+    }
+    .modalTable {
+      margin: 5px;
+      &_header {
+        font-size: 14px;
+      }
+      &_content {
+        font-size: 12px;
+      }
     }
   }
   .modal_button {
