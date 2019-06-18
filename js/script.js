@@ -1,8 +1,8 @@
 "use strict";
 
-var rock = document.getElementById("rockButton");
-var paper = document.getElementById("paperButton");
-var scissors = document.getElementById("scissorsButton");
+var rock = document.querySelector(".btnRock");
+var paper = document.querySelector(".btnPaper");
+var scissors = document.querySelector(".btnScissors");
 var outputMessages = document.getElementById("outputResult");
 var newGameButton = document.getElementById("newGameBtn");
 var playerMoves = document.getElementById("playerMoves");
