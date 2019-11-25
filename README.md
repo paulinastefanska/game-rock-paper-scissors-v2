@@ -6,5 +6,5 @@ Simple JavaScript game.
 - CSS, 
 - SASS, 
 - RWD, 
-- JavaScript, 
+- JavaScript ES5, 
 - NPM.
